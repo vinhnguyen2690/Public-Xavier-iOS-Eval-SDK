@@ -137,6 +137,11 @@ class XavierViewController: UIViewController, SCIXavierClientProtocol, XMLParser
         })
     }
     
+    @objc func onCapturedQr(_ qrValue: String!) {
+        print("\n=====> onCaptureQr() - \(qrValue)")
+        self.insertToTextView(qrValue as NSString!)
+    }
+    
     func startXavier() -> Void {
         xavierVC = SCIXavierViewController(true)
         xavierVC?._clientProtocol = self
